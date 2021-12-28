@@ -1,0 +1,79 @@
+body{
+    background-color: darkgreen;
+    margin: 0px;
+}
+
+.body-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#first-stage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+}
+
+p{
+    margin-top: 50px;
+}
+
+/* play button style */
+.play{
+    margin-top: 20px;
+    background-color: darkkhaki;
+    box-shadow: 3px 3px black;
+    width: 20%;
+
+}
+
+/* second stage scene */
+
+
+
+#Player, #Computer{
+    width: 150px;
+    height: 250px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 3px;
+}
+
+.RPS-container{
+    width:600px;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: black;
+    background-size: 100%;
+}
+/* rock, paper, scissor buttons styled */
+.rock, .paper, .scissors {
+    width : 70px;
+    height: 70px;
+}
+
+
+
+.second-stage{
+    padding: 0px;
+    margin: 0px;
+    display:flex;
+    flex-direction: column;
+}
+
+.second-stage > .RPS-container {
+    align-self: center;
+}
