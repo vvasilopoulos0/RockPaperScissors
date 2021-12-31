@@ -17,7 +17,8 @@ body{
     width: 600px;
 }
 
-p{
+/* paragraph under the title in the main screen */
+.sub-title{
     margin-top: 50px;
 }
 
@@ -27,40 +28,43 @@ p{
     background-color: darkkhaki;
     box-shadow: 3px 3px black;
     width: 20%;
+    font-size: 30px;
+    color:aqua;
+    border-radius: 5px;
 
+}
+
+.play-button{
+    text-decoration: none;
 }
 
 /* second stage scene */
 
 
 
-#Player, #Computer{
-    width: 150px;
-    height: 250px;
-    border-radius: 3px;
-    border-style: solid;
-    border-color: gray;
-    border-width: 3px;
-}
-
-.RPS-container{
-    width:600px;
-    height: 500px;
+.navbar-container{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    background-color: black;
 }
 
 .navbar{
     overflow: hidden;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     background-color: black;
     background-size: 100%;
 }
+
+/* text beneath rock paper scissor icons */
+.icon-caption{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
 /* rock, paper, scissor buttons styled */
-.rock, .paper, .scissors {
+#rock, #paper, #scissors {
     width : 70px;
     height: 70px;
 }
@@ -74,6 +78,52 @@ p{
     flex-direction: column;
 }
 
+
+.RPS-container{
+    width:600px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wins-losses{
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    align-self:center;
+}
+
+#Player, #Computer{
+    width: 100px;
+    height: 150px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    background-color: lightyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .second-stage > .RPS-container {
     align-self: center;
+}
+
+
+#container-caption1, #container-caption2{
+    display: flex;
+    justify-content: center;
+}
+
+#playAgain{
+    background-color: lime;
+    box-shadow: 3px 3px black;
+    font-size: 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    visibility: hidden;
 }

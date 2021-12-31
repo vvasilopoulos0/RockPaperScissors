@@ -10,19 +10,208 @@
 <body>
     <div class = "second-stage">
         <nav class = 'navbar'>
-            <button class = "rock"></button>
-            <button class = "paper"></button>
-            <button class = "scissors"></button>
-        </nav>
-        <div class = "RPS-container">
-            <div id = "Player">
-
+            <div class = "rock-container">  
+                <button class = "icon" id = "rock">
+                    <img src = "Pictures/icons8-hand-rock-40.png" alt = "hand-rock" width="48px" height="48px">
+                </button>
+                <p class = "icon-caption" >Rock</p>
+            </div>   
+            <div class = "paper-container">   
+                <button class = "icon" id = "paper">
+                    <img src = "Pictures/icons8-hand-40.png" alt = "hand-paper">
+                </button>
+                <p class = "icon-caption">Paper</p>
             </div>
-
-            <div id = "Computer">
-
+            <div class = "scissors-container">   
+                <button class = "icon" id = "scissors">
+                    <img src = "Pictures/icons8-hand-scissors-48.png" alt = "hand-scissors">
+                </button>
+                <p class = "icon-caption">Scissors</p>
+            </div>
+        </nav>  
+  
+        <div class = "RPS-container">
+            <div class = "player-container">
+                <div id = "Player"></div>
+                <p id = "container-caption1">Player:</p>
+            </div>
+            <div class = "computer-container">
+                <div id = "Computer"></div>
+                <p id = "container-caption2">Computer:</p>
             </div>
         </div>
+
+        <p id = "result-text" style="text-align: center; color: azure;"></p>
+        <button id = "playAgain">Play Again!</button>
     </div>
+
+    <script>
+        let defeat = 0;
+        let win = 0;
+        //when the user clicks one of the three buttons, the image shows up in the container, the computer plays and then the other buttons are disabled
+        //we give the computer Play function the number 1 for rock, 2 for paper and 3 for scissors, so we can calculate the result
+        document.getElementById("rock").addEventListener("click",function() {
+            document.getElementById("Player").innerHTML += "<img src =\"Pictures/icons8-hand-rock-40.png\" width = \"75px\" height = \"75px\">"
+            result = computerPlay(1);
+            console.log(result);
+            if (result == "win"){
+                win += 1;
+                document.getElementById("container-caption1").innerHTML = `Player:${win}`; 
+            }
+            else if (result == "defeat"){
+                defeat += 1;
+                document.getElementById("container-caption2").innerHTML = `Computer:${defeat}`; 
+            }
+            if ((win == 5) || (defeat == 5)){
+                [win,defeat] = endGame(win,defeat);
+            }
+            document.getElementById("rock").disabled = true;
+            document.getElementById("paper").disabled = true;
+            document.getElementById("scissors").disabled = true;
+            playAgainVisible();
+        })
+        
+        document.getElementById("paper").addEventListener("click",function() {
+            document.getElementById("Player").innerHTML += "<img src =\"Pictures/icons8-hand-40.png\" width = \"75px\" height = \"75px\">"
+            result = computerPlay(2);
+            if (result == "win"){
+                win += 1;
+                document.getElementById("container-caption1").innerHTML = `Player:${win}`; 
+                
+            }
+            else if(result == "defeat"){
+                defeat += 1;
+                document.getElementById("container-caption2").innerHTML = `Computer:${defeat}`;
+            }
+            if ((win == 5) || (defeat == 5)){
+                [win,defeat] = endGame(win,defeat);
+            }
+            document.getElementById("rock").disabled = true;
+            document.getElementById("paper").disabled = true;
+            document.getElementById("scissors").disabled = true;
+            playAgainVisible();
+        })
+        
+        document.getElementById("scissors").addEventListener("click",function() {
+            document.getElementById("Player").innerHTML += "<img src =\"Pictures/icons8-hand-scissors-48.png\" width = \"75px\" height = \"75px\">"
+            result = computerPlay(3);
+            if (result == "win"){
+                win += 1;
+                document.getElementById("container-caption1").innerHTML = `Player:${win}`; 
+            }
+            else if(result == "defeat"){
+                defeat += 1;
+                document.getElementById("container-caption2").innerHTML = `Computer:${defeat}`;
+            }
+            if ((win == 5) || (defeat == 5)){
+                [win,defeat] = endGame(win,defeat);
+            }
+            document.getElementById("rock").disabled = true;
+            document.getElementById("paper").disabled = true;
+            document.getElementById("scissors").disabled = true;
+            playAgainVisible();
+        })
+
+        // function that randomly chooses rock, paper ,scissor for the computer agent and shows it in the computer container
+        function computerPlay(player_option){
+            let x = Math.floor((Math.random()*3)+1);
+            let result = 0; //default result is defeat, if the player wins then we set result to 1. Works as a flag.
+            if (x == 1){
+                document.getElementById("Computer").innerHTML += "<img src =\"Pictures/icons8-hand-rock-40.png\" width = \"75px\" height = \"75px\">"
+            }
+            else if (x==2){
+                document.getElementById("Computer").innerHTML += "<img src =\"Pictures/icons8-hand-40.png\" width = \"75px\" height = \"75px\">"
+            }
+            else if(x==3){
+                document.getElementById("Computer").innerHTML += "<img src =\"Pictures/icons8-hand-scissors-48.png\" width = \"75px\" height = \"75px\">"
+            }
+
+            switch(x){
+                case 1:
+                    switch(player_option){
+                        case 1:
+                            document.getElementById("result-text").innerHTML += "This was a draw!";
+                            return("draw");
+                            break;
+                        case 2:
+                            document.getElementById("result-text").innerHTML += "This was a win!";
+                            result = 1;
+                            break;
+                        case 3:
+                            document.getElementById("result-text").innerHTML += "This was a loss!";
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch(player_option){
+                        case 1:
+                            document.getElementById("result-text").innerHTML += "This was a loss!";
+                            break;
+                        case 2:
+                            document.getElementById("result-text").innerHTML += "This was a draw!";
+                            return("draw");
+                            break;
+                        case 3:
+                            document.getElementById("result-text").innerHTML += "This was a win!";
+                            result = 1;
+                            break;
+                    }     
+                    break;
+                case 3:
+                    switch(player_option){
+                        case 1:
+                            document.getElementById("result-text").innerHTML += "This was a win!";
+                            result = 1;
+                            break;
+                        case 2:
+                            document.getElementById("result-text").innerHTML += "This was a loss!";
+                            break;
+                        case 3:
+                            document.getElementById("result-text").innerHTML += "This was a draw!";
+                            return("draw");
+                            break;
+                    } 
+                    break;
+            }   
+            if (result == 1){
+                return ("win");
+            }
+            else{
+                return ("defeat");
+            }
+        }
+        
+
+        document.getElementById("playAgain").addEventListener("click",function() {
+            playAgain();
+        })
+
+        //function that makes the play again button visible, after the game is concluded.
+        function playAgainVisible(){
+            document.getElementById("playAgain").style.visibility = "visible"
+        }
+
+        //function that resets the game so it can be played again
+        function playAgain(){
+            document.getElementById("rock").disabled = false;
+            document.getElementById("paper").disabled = false;
+            document.getElementById("scissors").disabled = false;
+            document.getElementById("Computer").innerHTML = "";
+            document.getElementById("Player").innerHTML = "";
+            document.getElementById("result-text").innerHTML = "";
+        }
+        // function that alers the win or loss and sets win and losses to 0 again
+        function endGame(wins,losses){
+            if (wins > losses){
+                alert("You won!");
+            }
+            else{
+                alert("You lost!")
+            }
+            document.getElementById("container-caption1").innerHTML = `Player:0`;
+            document.getElementById("container-caption2").innerHTML = `Computer:0`;
+            return [0,0];
+        }
+    </script>
 </body>
 </html>
