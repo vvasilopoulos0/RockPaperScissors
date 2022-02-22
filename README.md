@@ -6,7 +6,7 @@ In this web application the well known game of rock, paper and scissors is prese
 
 <p align="center">Related Projects</p>
 
-[AdminDashboard](https://vvasilopoulos0.github.io/AdminDashboard/)<br/>
+[AdminDashboard](https://vvasilopoulos0.github.io/AdminDashboard/)<br/><br/>
 [signupForm](https://vvasilopoulos0.github.io/signupForm/)<br/>
 [Calculator](https://vvasilopoulos0.github.io/Calculator/)<br/>
 [EtchASketch](https://vvasilopoulos0.github.io/EtchASketch/)
