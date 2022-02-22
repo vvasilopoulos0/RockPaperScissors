@@ -1,4 +1,4 @@
-<p align="center">RockPaperScissors</p>
+<h1 align="center">RockPaperScissors</h1>
 
 In this web application the well known game of rock, paper and scissors is presented using a mixture of HTML, CSS and Javascript.
 
