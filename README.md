@@ -4,7 +4,7 @@ In this web application the well known game of rock, paper and scissors is prese
 
 [RockPaperScissors](https://vvasilopoulos0.github.io/RockPaperScissors/)
 
-<p align="center">Related Projects</div>
+<p align="center">Related Projects</p>
 
-[AdminDashboard](https://vvasilopoulos0.github.io/AdminDashboard/)
-[signupForm](https://vvasilopoulos0.github.io/signupForm/)
+<p>[AdminDashboard](https://vvasilopoulos0.github.io/AdminDashboard/)</p>
+<p>[signupForm](https://vvasilopoulos0.github.io/signupForm/)</p>
