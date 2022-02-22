@@ -4,4 +4,4 @@ In this web application the well known game of rock, paper and scissors is prese
 
 [RockPaperScissors](https://vvasilopoulos0.github.io/RockPaperScissors/)
 
-Related Projects
+<div>Related Projects</div>
